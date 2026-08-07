@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><link rel="icon" type="image/svg+xml" href="favicon.svg">Amelie — Repostería Artesanal Argentina en Reggio Emilia</title>
+<meta name="description" content="Dulces artesanales argentinos en Reggio Emilia. Alfajores, lemon pie, marquise, tortas y medialunas hechos a mano por encargo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+  const CONFIG = {
+      whatsappNumber: "393509228970", // tu número con código de país, SIN + y sin espacios (ej: Italia = 39)
+    instagramUrl: "https://www.instagram.com/amelie.argentina.a/",
+    formspreeEndpoint: "https://formspree.io/f/XXXXXXXX" // pegá acá tu link de Formspree para recibir los emails (ver README punto 4)
+  };
+  const STRINGS = {
+    addBtn: "+ Agregar",
+    added: "Agregado ✓",
+    empty: "Tu pedido está vacío.",
+    waIntro: "¡Hola! Quiero hacer este pedido:",
+    waTotal: "Total",
+    waGeneric: "¡Hola! Quisiera hacer un pedido.",
+    waMatch: "¡Hola! Quiero reservar para el próximo día de partido de Valorugby.",
+    waClient: "Nombre",
+    waDate: "Fecha",
+    waModeLabel: "Modalidad",
+    waAddress: "Dirección/zona",
+    waMessage: "Mensaje",
+    modeRetiroRE: "Retiro en Reggio Emilia",
+    modeRetiroPR: "Retiro en Estación de Trenes Parma",
+    modeEnvio: "Consulto envío a domicilio",
+    errorRequired: "Completá tu nombre y la fecha para continuar."
+  };
+</script>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brand">Amelie</a>
+    <div class="top-mid">
+      <div class="lang-switch">
+        <a href="index.html" class="active">ES</a>
+        <span class="sep">/</span>
+        <a href="it.html">IT</a>
+      </div>
+    </div>
+    <div class="top-actions">
+      <a class="icon-link" id="ig-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+      </a>
+      <a class="icon-link" id="wa-link-top" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M3 21l1.5-4.5A8 8 0 1 1 8.5 20L3 21z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img class="hero-img" src="img/alfajormardel.jpg" alt="Alfajores artesanales Amelie">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Repostería artesanal argentina · Reggio Emilia</p>
+    <h1>Amelie</h1>
+    <div class="hero-tagline">
+      <p>Postres artesanales hechos con amor, inspirados en la tradición argentina.</p>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<div class="flourish" data-flourish>
+  <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+    <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
+    <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
+  </svg>
+</div>
+
+<div class="catalog-intro wrap">
+  <h2>El catálogo</h2>
+  <p>Todo se prepara a mano y por encargo. Agregá lo que quieras a tu pedido y lo confirmas por WhatsApp. Tocá el ⓘ de cada producto para ver los ingredientes.</p>
+</div>
+
+<main class="wrap">
+
+  <!-- MEDIALUNAS — primero, con más prioridad -->
+  
+  <section class="category" id="medialunas">
+         <div class="cat-head">
+      <p class="eyebrow">Recién horneadas · a pedido</p>
+      <h3>Medialunas de Manteca</h3>
+    </div>
+    <div class="card-grid">
+      <article class="pcard-featured pcard">
+        <div class="icon-wrap">
+       <div class="pcard-photo"><img src="img/medialunas.jpeg" alt="medialuna"></div>
+        </div>
+        <div class="pcard-body">
+          <span class="priority-tag">Se piden con anticipación</span>
+          <p class="pcard-sub">Docena · mínimo 6 unidades · mínimo 3 días de anticipación</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Medialunas de Manteca</h4>
+            <button class="info-btn" data-ing-title="Medialunas de Manteca" data-ing-text="Huevo, azúcar, miel, harina, levadura fresca, manteca, sal y leche.">i</button>
+          </div>
+          <p class="pcard-desc">Medialunas de manteca, ícono del desayuno argentino. Se preparan siempre a pedido, así llegan recién horneadas.</p>
+          <div class="pcard-foot">
+            <span class="price">€15 / doc.</span>
+            <button class="add-btn" data-add data-id="medialunas" data-name="Medialunas de Manteca (docena)" data-price="15">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="flourish" data-flourish>
+    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
+      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
+    </svg>
+  </div>
+<!-- HELADO DE DULCE DE LECHE -->
+<section class="category" id="helado">
+  <div class="cat-head">
+    <p class="eyebrow">Ideal para el calor</p>
+    <h3>Helado de Dulce de Leche</h3>
+  </div>
+  <div class="card-grid">
+    <article class="pcard-featured pcard">
+         
+      <div class="icon-wrap">
+        <div class="pcard-photo"><img src="img/heladoddl.jpeg" alt="Helado de Dulce de Leche"></div>
+      </div>
+      <div class="pcard-body">
+        <span class="priority-tag">Fresco de la semana</span>
+        <p class="pcard-sub">400 gr</p>
+        <div class="title-row">
+          <h4 class="pcard-title">Helado de Dulce de Leche</h4>
+          <button class="info-btn" data-ing-title="Helado de Dulce de Leche" data-ing-text="Crema de leche, azúcar, leche, sal y dulce de leche casero (leche, azúcar y bicarbonato de sodio). Sin aditivos.">i</button>
+        </div>
+        <p class="pcard-desc">Cremoso, casero y sin aditivos. Súper rico y fresco para estos días de calor.</p>
+        <div class="pcard-foot">
+          <span class="price">€6</span>
+          <button class="add-btn" data-add data-id="helado-dulce-de-leche" data-name="Helado de Dulce de Leche (400 gr)" data-price="6">+ Agregar</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="flourish" data-flourish>
+  <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+    <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
+    <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
+  </svg>
+</div>
+  <!-- ALFAJORES -->
+  <section class="category" id="alfajores">
+    <div class="cat-head">
+      <p class="eyebrow">Lo de todos los días</p>
+      <h3>Alfajores</h3>
+    </div>
+    <div class="card-grid">
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/alfajormardel.jpg" alt="Alfajor Mardel"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">10 pz</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Alfajor Mardel</h4>
+            <button class="info-btn" data-ing-title="Alfajor Mardel" data-ing-text="Azúcar, harina, almidón de maíz, huevos, sal, bicarbonato de sodio, manteca, miel, cacao, dulce de leche, chocolate semi amargo y ralladura de naranja.">i</button>
+          </div>
+          <p class="pcard-desc">Tapas de cacao rellenas de dulce de leche, bañadas en chocolate amargo. El sabor auténtico de Mar del Plata.</p>
+          <div class="pcard-foot">
+            <span class="price">€10</span>
+            <button class="add-btn" data-add data-id="alfajor-mardel" data-name="Alfajor Mardel (10 pz)" data-price="10">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/alfajorcitosmaicena.jpeg" alt="Alfajor de Maicena"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">12 pz</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Alfajor de Maicena</h4>
+            <button class="info-btn" data-ing-title="Alfajor de Maicena" data-ing-text="Azúcar, harina, almidón de maíz, huevos, manteca, dulce de leche, coco rallado y ralladura de limón.">i</button>
+          </div>
+          <p class="pcard-desc">Delicadas tapitas de maicena, rellenas de dulce de leche y rebozadas en coco. El más amado de Argentina.</p>
+          <div class="pcard-foot">
+            <span class="price">€10</span>
+            <button class="add-btn" data-add data-id="alfajor-maicena" data-name="Alfajor de Maicena (12 pz)" data-price="10">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/alfajorbrownie.jpeg" alt="Alfajor Brownie"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">5 pz</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Alfajor Brownie</h4>
+            <button class="info-btn" data-ing-title="Alfajor Brownie" data-ing-text="Harina, manteca, chocolate amargo, azúcar, huevos y dulce de leche.">i</button>
+          </div>
+          <p class="pcard-desc">Base de brownie de chocolate amargo, rellenos de dulce de leche y bañados en chocolate. Grandes, intensos, irresistibles.</p>
+          <div class="pcard-foot">
+            <span class="price">€10</span>
+            <button class="add-btn" data-add data-id="alfajor-brownie" data-name="Alfajor Brownie (5 pz)" data-price="10">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="flourish" data-flourish>
+    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
+      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
+    </svg>
+  </div>
+
+  <!-- LEMON PIE -->
+  <section class="category" id="lemon-pie">
+    <div class="cat-head">
+      <p class="eyebrow">Clásico cítrico</p>
+      <h3>Lemon Pie </h3>
+    </div>
+    <div class="card-grid">
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/lemonpie.jpg" alt="Lemon Pie Signature"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">ø 22 cm · 8–10 pers.</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Signature</h4>
+            <button class="info-btn" data-ing-title="Lemon Pie Signature" data-ing-text="Harina, manteca, azúcar, huevos y limón.">i</button>
+          </div>
+          <p class="pcard-desc">Base de masa sablée, crema de limón fresca y merengue italiano</p>
+          <div class="pcard-foot">
+            <span class="price">€30</span>
+            <button class="add-btn" data-add data-id="lemonpie-signature" data-name="Lemon Pie Signature (ø22cm)" data-price="30">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/lemonpetite.jpg" alt="Lemon Pie Petit"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">7 pz · ø 9 cm</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Petit</h4>
+            <button class="info-btn" data-ing-title="Lemon Pie Petit" data-ing-text="Harina, manteca, azúcar, huevos y limón.">i</button>
+          </div>
+          <p class="pcard-desc">Siete tartitas individuales, misma receta en formato personal. Perfectas para regalar.</p>
+          <div class="pcard-foot">
+            <span class="price">€30</span>
+            <button class="add-btn" data-add data-id="lemonpie-petit" data-name="Lemon Pie Petit (7 pz)" data-price="30">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/lemonmignon.jpg" alt="Lemon Pie Bite"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">10 pz · ø 6 cm</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Bite</h4>
+            <button class="info-btn" data-ing-title="Lemon Pie Bite" data-ing-text="Harina, manteca, azúcar, huevos y limón.">i</button>
+          </div>
+          <p class="pcard-desc">Diez bocados mignon, ideales para buffet, aperitivos o mesas de celebración.</p>
+          <div class="pcard-foot">
+            <span class="price">€30</span>
+            <button class="add-btn" data-add data-id="lemonpie-bite" data-name="Lemon Pie Bite (10 pz)" data-price="30">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="flourish" data-flourish>
+    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
+      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
+    </svg>
+  </div>
+
+  <!-- MARQUISE -->
+  <section class="category" id="marquise">
+    <div class="cat-head">
+      <p class="eyebrow">Para los que aman el chocolate</p>
+      <h3>Marquise </h3>
+    </div>
+    <div class="card-grid">
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/marquise.jpg" alt="Marquise Signature"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">ø 22 cm · sin gluten a pedido</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Signature</h4>
+            <button class="info-btn" data-ing-title="Marquise Signature" data-ing-text="Harina, manteca, chocolate amargo, azúcar, huevos, dulce de leche y crema. A pedido, sin TACC.">i</button>
+          </div>
+          <p class="pcard-desc">Torta de chocolate amargo con dulce de leche y crema chantilly</p>
+          <div class="pcard-foot">
+            <span class="price">€32</span>
+            <button class="add-btn" data-add data-id="marquise-signature" data-name="Marquise Signature (ø22cm)" data-price="32">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/marquisebite.jpg" alt="Marquise Bite"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">12 pz · ø 4.5 cm</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Bite</h4>
+            <button class="info-btn" data-ing-title="Marquise Bite" data-ing-text="Harina, manteca, chocolate amargo, azúcar, huevos, dulce de leche y crema. A pedido, sin TACC.">i</button>
+          </div>
+          <p class="pcard-desc">Doce mini marquise individuales, la misma intensidad de chocolate en formato mignon.</p>
+          <div class="pcard-foot">
+            <span class="price">€30</span>
+            <button class="add-btn" data-add data-id="marquise-bite" data-name="Marquise Bite (12 pz)" data-price="30">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="flourish" data-flourish>
+    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
+      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
+    </svg>
+  </div>
+
+  <!-- TORTAS -->
+  <section class="category" id="tortas">
+    <div class="cat-head">
+      <p class="eyebrow">Los clásicos de siempre</p>
+      <h3>Tortas</h3>
+    </div>
+    <div class="card-grid">
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="img/carrotcake.jpg" alt="Carrot Cake"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">ø 22 cm</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Carrot Cake</h4>
+            <button class="info-btn" data-ing-title="Carrot Cake" data-ing-text="Huevos, azúcar, harina, nuez, manteca y queso crema.">i</button>
+          </div>
+          <p class="pcard-desc">Torta de zanahoria húmeda con canela y nueces, cubierta de frosting de queso crema.</p>
+          <div class="pcard-foot">
+            <span class="price">€30</span>
+            <button class="add-btn" data-add data-id="carrot-cake" data-name="Carrot Cake (ø22cm)" data-price="30">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-photo"><img src="images/torta-nuez.jpg" alt="Torta de Nuez"></div>
+        <div class="pcard-body">
+          <p class="pcard-sub">ø 22 cm · sin gluten</p>
+          <div class="title-row">
+            <h4 class="pcard-title">Torta de Nuez</h4>
+            <button class="info-btn" data-ing-title="Torta de Nuez" data-ing-text="Huevos, azúcar, nuez, dulce de leche y crema. Sin gluten.">i</button>
+          </div>
+          <p class="pcard-desc">Bizcochuelo de nueces con dulce de leche, crema y nueces</p>
+          <div class="pcard-foot">
+            <span class="price">€30</span>
+            <button class="add-btn" data-add data-id="torta-nuez" data-name="Torta de Nuez (ø22cm)" data-price="30">+ Agregar</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<section class="envios">
+  <div class="wrap envios-inner">
+    <div>
+      <p class="eyebrow">Zona de entrega</p>
+      <h2>Entregamos en Reggio Emilia, Parma y alrededores</h2>
+      <p>Retirás en persona en Reggio Emilia, o coordinamos el envío a tu domicilio en Reggio Emilia, y organizamos para Parma y zonas cercanas.</p>
+    </div>
+    <div class="envios-chips">
+      <div class="echip"><span class="k">Zona</span><span class="v">Reggio Emilia · Parma · alrededores</span></div>
+      <div class="echip"><span class="k">Pago</span><span class="v">Efectivo o transferencia</span></div>
+      <div class="echip"><span class="k">Tortas y alfajores</span><span class="v">Mínimo 2 días</span></div>
+      <div class="echip"><span class="k">Medialunas</span><span class="v">Mínimo 3 días</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <h2>Cómo pedir</h2>
+    <div class="steps">
+      <div class="step">
+        <p class="num">01</p>
+        <h4>Elegí y agregá</h4>
+        <p>Mirá el catálogo y agregá lo que quieras a tu pedido con el botón "+ Agregar".</p>
+      </div>
+      <div class="step">
+        <p class="num">02</p>
+        <h4>Enviá el pedido</h4>
+        <p>Abrí el carrito y con un clic mandamos todo el detalle a WhatsApp.</p>
+      </div>
+      <div class="step">
+        <p class="num">03</p>
+        <h4>Coordinamos</h4>
+        <p>Confirmamos día de entrega o retiro (mínimo 2 días, medialunas 3 días).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="flourish" data-flourish>
+  <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+    <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
+    <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
+  </svg>
+</div>
+
+<section class="matchday">
+  <div class="wrap">
+    <div class="matchday-grid">
+      <div class="matchday-icon">
+        <svg viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="20" ry="12" transform="rotate(-35 24 24)"/><path d="M13 24 L35 24 M17 19 l2.4 2.4M17 29 l2.4 -2.4M31 19 l-2.4 2.4M31 29 l-2.4 -2.4"/></svg>
+      </div>
+      <div>
+        <p class="eyebrow">Día de partido · Valorugby</p>
+        <h2>Entregamos todos los días, pero el día de partido es especial</h2>
+        <p>Hacemos entrega todos los días de la semana. Además, tenemos el día fijo de partido de Valorugby: ese día siempre suele haber alfajores, y preparamos medialunas a pedido para el tercer tiempo. Igual te recomendamos reservar así aseguras tu box.</p>
+        <div class="matchday-offer">
+          <div class="offer-chip"><div class="k">Alfajores</div><div class="v">Suelen estar — mejor reservar</div></div>
+          <div class="offer-chip"><div class="k">Medialunas</div><div class="v">Solo a pedido</div></div>
+        </div>
+        <a class="btn btn-light" target="_blank" rel="noopener" id="wa-link-match" href="#">Reservar para el próximo partido →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand">Amelie</a>
+    <p>Repostería artesanal argentina · Reggio Emilia, Italia</p>
+    <div class="footer-links">
+      <a class="btn btn-caramelo" id="wa-link-footer" target="_blank" rel="noopener" href="#">Escribinos por WhatsApp</a>
+      <a class="btn btn-light" id="ig-link-footer" target="_blank" rel="noopener" href="#">Instagram</a>
+    </div>
+    <p>Hecho a mano · por encargo</p>
+  </div>
+</footer>
+
+<div class="ing-overlay" id="ing-overlay"></div>
+<div class="ing-modal" id="ing-modal">
+  <button class="ing-close" id="ing-close">✕</button>
+  <p class="ing-eyebrow">Ingredientes</p>
+  <h4 id="ing-title"></h4>
+  <p class="ing-text" id="ing-text"></p>
+</div>
+
+<button class="cart-fab" id="cart-fab" style="display:none">
+  <svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+  <span>Tu pedido</span>
+  <span class="cart-count" id="cart-count">0</span>
+</button>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-panel" id="cart-panel">
+  <div class="cart-head">
+    <h3>Tu pedido</h3>
+    <button class="cart-close" id="cart-close">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div id="cart-items-list"></div>
+
+    <div class="cart-form-wrap" id="cart-form-wrap">
+      <label class="cart-field">
+        <span>Nombre</span>
+        <input type="text" id="cart-name" placeholder="Tu nombre">
+      </label>
+      <label class="cart-field">
+        <span>Fecha de retiro o entrega</span>
+        <input type="date" id="cart-date">
+      </label>
+      <label class="cart-field">
+        <span>Modalidad</span>
+        <select id="cart-mode">
+          <option value="retiro_re">Retiro en Reggio Emilia</option>
+          <option value="retiro_pr">Retiro en Estación de Trenes Parma</option>
+          <option value="envio">Consulto envío a domicilio</option>
+        </select>
+      </label>
+      <label class="cart-field">
+        <span>Dirección o zona (si es envío)</span>
+        <input type="text" id="cart-address" placeholder="Calle, número, ciudad">
+      </label>
+      <label class="cart-field">
+        <span>Mensaje especial (opcional)</span>
+        <textarea id="cart-message" rows="2" placeholder="Alguna aclaración, alergias, dedicatoria..."></textarea>
+      </label>
+      <label class="cart-field">
+        <span>Email (opcional, para guardar tu pedido)</span>
+        <input type="email" id="cart-email" placeholder="tu@email.com">
+      </label>
+      <p class="cart-error" id="cart-error"></p>
+    </div>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Total</span><span id="cart-total">€0</span></div>
+    <button class="btn btn-caramelo" id="cart-send">Enviar pedido por WhatsApp</button>
+    <button class="btn btn-clear" id="cart-clear">Vaciar pedido</button>
+  </div>
+</aside>
+
+<script src="cart.js"></script>
+<script src="ingredients.js"></script>
+</body>
+</html>
