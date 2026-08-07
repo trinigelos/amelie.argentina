@@ -22,7 +22,14 @@
     </div>
   </div>
 </div>
-
+<script>
+  document.getElementById('lang-select-es').addEventListener('click', ()=>{
+    document.getElementById('lang-select-overlay').classList.add('hidden');
+  });
+  document.getElementById('lang-select-it').addEventListener('click', ()=>{
+    window.location.href = 'it.html';
+  });
+</script>
 <script>
   const CONFIG = {
       whatsappNumber: "393509228970", // tu número con código de país, SIN + y sin espacios (ej: Italia = 39)
