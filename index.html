@@ -23,11 +23,16 @@
   </div>
 </div>
 <script>
+  const langParams = new URLSearchParams(window.location.search);
+  if(langParams.get('lang') === 'es'){
+    document.getElementById('lang-select-overlay').classList.add('hidden');
+    window.history.replaceState({}, '', window.location.pathname);
+  }
   document.getElementById('lang-select-es').addEventListener('click', ()=>{
     document.getElementById('lang-select-overlay').classList.add('hidden');
   });
   document.getElementById('lang-select-it').addEventListener('click', ()=>{
-    window.location.href = 'it.html';
+    window.location.href = 'it.html?lang=it';
   });
 </script>
 <script>
@@ -63,7 +68,7 @@
       <div class="lang-switch">
         <a href="index.html" class="active">ES</a>
         <span class="sep">/</span>
-        <a href="it.html">IT</a>
+<a href="it.html?lang=it">IT</a>
       </div>
     </div>
     <div class="top-actions">
