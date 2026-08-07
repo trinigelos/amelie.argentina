@@ -262,7 +262,6 @@ section.category{ padding: 50px 0; }
 /* ---------- how to order ---------- */
 .how{
   padding: 56px 0 40px;
-  background: rgba(193, 122, 46, 0.1);
   border-top: 1px solid rgba(122, 35, 49, 0.15);
   border-bottom: 1px solid rgba(122, 35, 49, 0.15);
 }
