@@ -24,11 +24,16 @@
   </div>
 </div>
 <script>
+  const langParams = new URLSearchParams(window.location.search);
+  if(langParams.get('lang') === 'it'){
+    document.getElementById('lang-select-overlay').classList.add('hidden');
+    window.history.replaceState({}, '', window.location.pathname);
+  }
   document.getElementById('lang-select-it').addEventListener('click', ()=>{
     document.getElementById('lang-select-overlay').classList.add('hidden');
   });
   document.getElementById('lang-select-es').addEventListener('click', ()=>{
-    window.location.href = 'index.html';
+    window.location.href = 'index.html?lang=es';
   });
 </script>
 
