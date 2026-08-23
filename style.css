@@ -198,18 +198,7 @@ h1,h2,h3,h4{ font-weight:800; font-family: var(--display); }
 
 section.category{ padding: 50px 0; }
 
-#alfajores{
-  background-color: #F7ECE2;
-  background-image: repeating-linear-gradient(45deg, #F0DCD0 0 8px, transparent 8px 30px);
-  padding: 50px 24px;
-  border-radius: 8px;
-}
-#marquise{
-  background-color: #F7ECE2;
-  background-image: repeating-linear-gradient(45deg, #F0DCD0 0 8px, transparent 8px 30px);
-  padding: 50px 24px;
-  border-radius: 8px;
-}
+
 .cat-head{ margin-bottom: 30px; }
 .cat-head h3{
   font-family: var(--display); font-weight:800; text-transform:lowercase;
