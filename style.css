@@ -96,7 +96,11 @@ p{ margin:0 0 10px; }
     background: var(--borgona);
 
 }
-
+.hero-content{
+  position:relative; z-index:2; text-align:left;
+  max-width: 640px; width:100%;
+  margin: 0; padding-left: 6vw;
+}
 .hero-bar{
   display:block;
   width: 340px;
