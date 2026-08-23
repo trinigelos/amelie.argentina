@@ -93,14 +93,26 @@ p{ margin:0 0 10px; }
   display:flex; align-items:center;
   color: var(--papel);
   padding: 70px 0;
+    background: var(--borgona);
+
 }
-.hero-content{ position:relative; z-index:2; }
-.hero-logo-row{ display:flex; align-items:center; gap:18px; margin-bottom: 26px; }
+
+/*.hero-content{ position:relative; z-index:2; }
+ .hero-logo-row{ display:flex; align-items:center; gap:18px; margin-bottom: 26px; }
 .hero-bar{ width:6px; height: clamp(3rem, 9vw, 6rem); background: var(--rosa-viejo); flex-shrink:0; }
 .hero h1{
   font-family: var(--display); font-weight:800; font-style:normal;
   text-transform:lowercase; letter-spacing:-0.02em;
-  font-size: clamp(3.2rem, 11vw, 7rem); line-height:0.9; margin:0;
+  font-size: clamp(3.2rem, 11vw, 7rem); line-height:0.9; margin:0;*/
+
+.hero-content{ position:relative; z-index:2; }
+.hero-bar{
+  display:block;
+  width: 220px; max-width: 40vw;
+  height: 6px;
+  background: var(--rosa-viejo);
+  margin: 22px 0 26px;
+}
 }
 .hero-tagline-caps{
   font-family: var(--mono); font-weight:500; text-transform:uppercase;
