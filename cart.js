@@ -46,13 +46,13 @@ function money(n){
 }
 
 function updateDateMin(){
-  const hasMedialunas = !!cart['medialunas'];
-  const days = hasMedialunas ? 3 : 2;
-  const d = new Date();
-  d.setDate(d.getDate() + days);
-  const iso = d.toISOString().split('T')[0];
-  const dateInput = document.getElementById('cart-date');
-  if(dateInput) dateInput.min = iso;
+//*const hasMedialunas = !!cart['medialunas'];
+ // const days = hasMedialunas ? 3 : 2;
+ // const d = new Date();
+ // d.setDate(d.getDate() + days);
+ // const iso = d.toISOString().split('T')[0];
+ // const dateInput = document.getElementById('cart-date');
+ // if(dateInput) dateInput.min = iso; //
 }
 
 function renderCart(){
@@ -190,6 +190,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     btn.addEventListener('click', ()=>{
       addToCart(btn.dataset.id, btn.dataset.name, parseFloat(btn.dataset.price), btn);
     });
+      });
+  
+      document.querySelectorAll('[data-wa-stock]').forEach(link=>{
+    link.href = waLink(link.dataset.stockMsg);
+
   });
 
   document.getElementById('cart-fab').addEventListener('click', openCart);
