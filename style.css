@@ -99,24 +99,24 @@ p{ margin:0 0 10px; }
 
 .hero-bar{
   display:block;
-  width: 320px; max-width: 50vw;
-  height: 8px;
+  width: 340px;
+  height: 7px;
   background: var(--rosa-viejo);
-  margin: 32px 0 36px;
+  margin: 28px 0 30px;
 }
 .hero h1{
   font-family: var(--display); font-weight:800; font-style:normal;
-  text-transform:lowercase; letter-spacing:-0.02em;
-  font-size: clamp(4.5rem, 16vw, 11rem); line-height:0.9; margin:0;
+  text-transform:lowercase;
+  font-size: 132px; letter-spacing: -0.04em; line-height: 0.85; margin:0;
 }
 .hero-tagline-caps{
-  font-family: var(--mono); font-weight:500; text-transform:uppercase;
-  letter-spacing:0.22em; font-size: clamp(1.15rem, 3vw, 1.7rem);
-  margin: 0 0 16px; color: var(--crema);
+  font-family: var(--body); font-weight:300; text-transform:uppercase;
+  letter-spacing:0.24em; font-size: 18px;
+  margin: 0 0 14px; color: var(--crema);
 }
 .hero-location{
-  font-family: var(--mono); font-weight:500; text-transform:uppercase;
-  letter-spacing:0.18em; font-size: clamp(0.9rem, 1.8vw, 1.15rem); opacity:0.8; margin:0; color: var(--rosa-viejo);
+  font-family: var(--body); font-weight:300; text-transform:uppercase;
+  letter-spacing:0.24em; font-size: 13px; opacity:0.85; margin:0; color: var(--rosa-viejo);
 }
 /* ---------- divisores de rayas (reemplazan al filete anterior) ---------- */
 .flourish{
