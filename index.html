@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amelie — Repostería Artesanal Argentina en Reggio Emilia</title><link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>amélie — Repostería Artesanal Argentina en Reggio Emilia</title><link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Dulces artesanales argentinos en Reggio Emilia. Alfajores, lemon pie, marquise, tortas y medialunas hechos a mano por encargo.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Jost:wght@300;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="lang-select-overlay" id="lang-select-overlay">
   <div class="lang-select-modal">
-    <span class="brand-mark">Amelie</span>
+    <span class="brand-mark">amélie</span>
     <p>Elegí tu idioma · Scegli la tua lingua</p>
     <div class="lang-select-buttons">
       <button class="primary" id="lang-select-es">Español</button>
@@ -57,13 +57,17 @@
     modeRetiroRE: "Retiro en Reggio Emilia",
     modeRetiroPR: "Retiro en Estación de Trenes Parma",
     modeEnvio: "Consulto envío a domicilio",
-    errorRequired: "Completá tu nombre y la fecha para continuar."
+    errorRequired: "Completá tu nombre y la fecha para continuar.",
+    errorPopupTitle: "faltan completar datos",
+    errorPopupIntro: "Antes de enviar el pedido, completá:",
+    errorNombre: "Nombre",
+    errorFecha: "Fecha de retiro o entrega"
   };
 </script>
 
 <header class="topbar">
   <div class="wrap">
-    <a href="#top" class="brand">Amelie</a>
+    <a href="#top" class="brand">amélie</a>
     <div class="top-mid">
       <div class="lang-switch">
         <a href="index.html" class="active">ES</a>
@@ -82,24 +86,20 @@
   </div>
 </header>
 
-<section class="hero" id="top">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Repostería artesanal argentina · Reggio Emilia</p>
-    <h1>Amelie</h1>
-    <div class="hero-tagline">
-      <p>Postres artesanales hechos con amor, inspirados en la tradición argentina.</p>
+<section class="hero rayas-oscuro" id="top">
+  <div class="wrap hero-content">
+    <div class="hero-logo-row">
+      <span class="hero-bar"></span>
+      <h1>amélie</h1>
     </div>
+    <p class="hero-tagline-caps">Tortas · Alfajores · Medialunas</p>
+    <p class="hero-location">Reggio Emilia · Italia</p>
   </div>
   <div class="hero-scroll"><span>SCROLL</span><span class="line"></span></div>
 </section>
 
-<div class="flourish" data-flourish>
-  <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-    <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
-    <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
-  </svg>
-</div>
+
+<div class="flourish" data-flourish></div>
 
 <div class="catalog-intro wrap">
   <h2>El catálogo</h2>
@@ -131,12 +131,7 @@
   </div>
 </section>
 
-<div class="flourish" data-flourish>
-  <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-    <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
-    <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
-  </svg>
-</div>
+<div class="flourish" data-flourish></div>
 
 
   <!-- MEDIALUNAS — primero, con más prioridad -->
@@ -170,12 +165,7 @@
     </div>
   </section>
 
-  <div class="flourish" data-flourish>
-    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
-      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
-    </svg>
-  </div>
+  <div class="flourish" data-flourish></div>
 <!-- HELADO DE DULCE DE LECHE 
 <section class="category" id="helado">
   <div class="cat-head">
@@ -206,12 +196,7 @@
 </section>
   
 
-<div class="flourish" data-flourish>
-  <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-    <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
-    <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
-  </svg>
-</div> -->
+<div class="flourish" data-flourish></div> -->
   <!-- ALFAJORES -->
   <section class="category" id="alfajores">
     <div class="cat-head">
@@ -272,12 +257,7 @@
     </div>
   </section>
 
-  <div class="flourish" data-flourish>
-    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
-      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
-    </svg>
-  </div>
+  <div class="flourish" data-flourish></div>
 
   <!-- LEMON PIE -->
   <section class="category" id="lemon-pie">
@@ -338,12 +318,7 @@
     </div>
   </section>
 
-  <div class="flourish" data-flourish>
-    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
-      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
-    </svg>
-  </div>
+  <div class="flourish" data-flourish></div>
 
   <!-- MARQUISE -->
   <section class="category" id="marquise">
@@ -388,12 +363,7 @@
     </div>
   </section>
 
-  <div class="flourish" data-flourish>
-    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-      <path class="p-vino" d="M10,30 C60,5 100,55 150,30 C185,12 200,48 200,30 C200,12 215,48 250,30 C300,5 340,55 390,30" />
-      <path class="p-oro" d="M10,34 C60,12 100,50 150,34 C185,20 200,42 200,34 C200,26 215,42 250,34 C300,12 340,50 390,34" />
-    </svg>
-  </div>
+  <div class="flourish" data-flourish></div>
 
   <!-- TORTAS -->
   <section class="category" id="tortas">
@@ -479,7 +449,7 @@
 
 <footer>
   <div class="wrap">
-    <a href="#top" class="brand">Amelie</a>
+    <a href="#top" class="brand">amélie</a>
     <p>Repostería artesanal argentina · Reggio Emilia, Italia</p>
     <div class="footer-links">
       <a class="btn btn-caramelo" id="wa-link-footer" target="_blank" rel="noopener" href="#">Escribinos por WhatsApp</a>
@@ -495,6 +465,15 @@
   <p class="ing-eyebrow">Ingredientes</p>
   <h4 id="ing-title"></h4>
   <p class="ing-text" id="ing-text"></p>
+</div>
+
+<div class="ing-overlay" id="field-error-overlay-2"></div>
+<div class="ing-modal" id="field-error-modal">
+  <button class="ing-close" id="field-error-close">✕</button>
+  <p class="ing-eyebrow">Atención</p>
+  <h4 id="field-error-title"></h4>
+  <p class="ing-text" id="field-error-intro"></p>
+  <ul id="field-error-list"></ul>
 </div>
 
 <button class="cart-fab" id="cart-fab" style="display:none">

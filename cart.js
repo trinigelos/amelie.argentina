@@ -31,7 +31,6 @@ function clearCart(){
   document.getElementById('cart-address').value = '';
   document.getElementById('cart-message').value = '';
   document.getElementById('cart-email').value = '';
-  document.getElementById('cart-error').textContent = '';
   renderCart();
 }
 
@@ -46,13 +45,7 @@ function money(n){
 }
 
 function updateDateMin(){
-//*const hasMedialunas = !!cart['medialunas'];
- // const days = hasMedialunas ? 3 : 2;
- // const d = new Date();
- // d.setDate(d.getDate() + days);
- // const iso = d.toISOString().split('T')[0];
- // const dateInput = document.getElementById('cart-date');
- // if(dateInput) dateInput.min = iso; //
+  // Sin restricción de días mínimos: el cliente elige libremente cualquier fecha.
 }
 
 function renderCart(){
@@ -100,25 +93,6 @@ function formatDate(dateStr){
   if(!dateStr) return '';
   const [y,m,d] = dateStr.split('-');
   return `${d}/${m}/${y}`;
-}
-
-function validateOrder(){
-  const name = document.getElementById('cart-name').value.trim();
-  const date = document.getElementById('cart-date').value;
-  const errEl = document.getElementById('cart-error');
-  if(!name || !date){
-    errEl.textContent = STRINGS.errorRequired;
-    return null;
-  }
-  errEl.textContent = '';
-  return {
-    name,
-    date,
-    mode: document.getElementById('cart-mode').value,
-    address: document.getElementById('cart-address').value.trim(),
-    message: document.getElementById('cart-message').value.trim(),
-    email: document.getElementById('cart-email').value.trim()
-  };
 }
 
 function buildOrderMessage(info){
@@ -171,9 +145,39 @@ async function sendOrderEmail(info){
   }
 }
 
+function showFieldErrorPopup(missing){
+  document.getElementById('field-error-title').textContent = STRINGS.errorPopupTitle;
+  document.getElementById('field-error-intro').textContent = STRINGS.errorPopupIntro;
+  document.getElementById('field-error-list').innerHTML = missing.map(m => `<li>${m}</li>`).join('');
+  document.getElementById('field-error-overlay-2').classList.add('open');
+  document.getElementById('field-error-modal').classList.add('open');
+}
+function closeFieldErrorPopup(){
+  document.getElementById('field-error-overlay-2').classList.remove('open');
+  document.getElementById('field-error-modal').classList.remove('open');
+}
+
 function submitOrder(){
-  const info = validateOrder();
-  if(!info) return;
+  const name = document.getElementById('cart-name').value.trim();
+  const date = document.getElementById('cart-date').value;
+
+  const missing = [];
+  if(!name) missing.push(STRINGS.errorNombre);
+  if(!date) missing.push(STRINGS.errorFecha);
+
+  if(missing.length > 0){
+    showFieldErrorPopup(missing);
+    return;
+  }
+
+  const info = {
+    name, date,
+    mode: document.getElementById('cart-mode').value,
+    address: document.getElementById('cart-address').value.trim(),
+    message: document.getElementById('cart-message').value.trim(),
+    email: document.getElementById('cart-email').value.trim()
+  };
+
   const msg = buildOrderMessage(info);
   sendOrderEmail(info);
   window.open(waLink(msg), '_blank');
@@ -190,11 +194,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     btn.addEventListener('click', ()=>{
       addToCart(btn.dataset.id, btn.dataset.name, parseFloat(btn.dataset.price), btn);
     });
-      });
-  
-      document.querySelectorAll('[data-wa-stock]').forEach(link=>{
-    link.href = waLink(link.dataset.stockMsg);
+  });
 
+  document.querySelectorAll('[data-wa-stock]').forEach(link=>{
+    link.href = waLink(link.dataset.stockMsg);
   });
 
   document.getElementById('cart-fab').addEventListener('click', openCart);
@@ -202,6 +205,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   document.getElementById('cart-overlay').addEventListener('click', closeCart);
   document.getElementById('cart-send').addEventListener('click', submitOrder);
   document.getElementById('cart-clear').addEventListener('click', clearCart);
+  document.getElementById('field-error-close').addEventListener('click', closeFieldErrorPopup);
+  document.getElementById('field-error-overlay-2').addEventListener('click', closeFieldErrorPopup);
 
   renderCart();
 
