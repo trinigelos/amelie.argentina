@@ -253,6 +253,12 @@ section.category{ padding: 50px 0; }
 }
 .price{ font-family: var(--mono); font-weight:700; font-size:1.05rem; color: var(--borgona); }
 
+.page-hero{
+  background: var(--borgona);
+  color: var(--papel);
+  padding: 90px 0 70px;
+}
+
 .add-btn{
   font-family: var(--mono); font-weight:500; font-size:0.65rem; letter-spacing:0.06em; text-transform:uppercase;
   background:none; border:1px solid var(--tinta); border-radius:999px; padding:8px 14px;
