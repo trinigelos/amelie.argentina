@@ -256,7 +256,7 @@ section.category{ padding: 50px 0; }
 .page-hero{
   background: var(--borgona);
   color: var(--papel);
-  padding: 90px 0 70px;
+  margin-bottom: 90px;
 }
 
 .add-btn{
